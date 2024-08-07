@@ -17,7 +17,7 @@
                     </button>
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
-                    <a v-for="item in navigation" :key="item.name" :href="item.href"
+                    <a v-for="item in navigation" :key="item.name" :href="item.href" @click="scrollTo(item.scroll)"
                         class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -77,9 +77,9 @@
         </div>
     </div>
 
-    <div class="relative px-6 lg:px-8 scroll-smooth">
+    <div id="service" class="relative px-6 lg:px-8 scroll-smooth">
         <div class="bg-white rounded-xl py-12 sm:py-32">
-            <div class="text-center mb-12">
+            <div class="text-center mb-24">
                 <h1 class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Transforming Businesses with Technology</h1>
             </div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="bg-gradient-to-t from-slate-300 scroll-smooth">
+    <div id="about" class="bg-gradient-to-t pb-12 from-slate-300 scroll-smooth">
         <div
             class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <img src="/world.jpg"
@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <div class="bg-gradient-to-b from-slate-300 py-12 sm:py-32 scroll-smooth">
+    <div id="contact" class="bg-gradient-to-b from-slate-300 py-12 sm:py-32 scroll-smooth">
         <div class="grid gap-x-8 gap-y-16 lg:grid-cols-3">
             <div>
                 <h2
@@ -166,10 +166,17 @@ const { companyName, companyNameOrg, footerAddress, footerEmail, footerPhone } =
 const config = useRuntimeConfig()
 
 const navigation = [
-  { name: 'Service', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Service', href: '#', scroll: 'service' },
+  { name: 'About', href: '#', scroll: 'about' },
+  { name: 'Contact', href: '#', scroll: 'contact' },
 ]
+
+const scrollTo = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const stats = [
   { id: 1, name: 'Custom-built, responsive websites tailored to your unique needs', value: 'Custom Web Development', image: '/web-dev.jpg' },
