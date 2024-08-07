@@ -9,4 +9,13 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  runtimeConfig: {
+    public: {
+      COMPANY_NAME: '',
+      COMPANY_NAME_ORG: '',
+      FOOTER_ADDRESS: '',
+      FOOTER_EMAIL: '',
+      FOOTER_PHONE: ''
+    }
+  },
 })
