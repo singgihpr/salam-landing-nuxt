@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white">
+    <div class="bg-white scroll-smooth">
         <header class="absolute inset-x-0 top-0 z-50">
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
@@ -54,12 +54,12 @@
         </header>
 
         <video
-            class="w-full h-full min-h-screen object-cover leading-none p-0 absolute top-0 left-0 md:object-center object-[70%_0%]"
+            class="w-full h-full min-h-screen object-cover leading-none p-0 absolute top-0 left-0 md:object-center object-[70%_0%] scroll-smooth"
             autoPlay muted loop>
             <source src="/background-flow.mp4" type="video/mp4" />
         </video>
 
-        <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="relative isolate px-6 pt-14 lg:px-8 scroll-smooth">
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div class="text-center">
                     <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Empower Your Business with
@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="relative px-6 lg:px-8">
+        <div class="relative px-6 lg:px-8 scroll-smooth">
             <div class="bg-white rounded-xl py-24 sm:py-32">
                 <div class="text-center mb-12">
                     <h1 class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Transforming Businesses with Technology</h1>
@@ -96,7 +96,7 @@
         </div>
     </div>
 
-    <div class="bg-gradient-to-t from-slate-300">
+    <div class="bg-gradient-to-t from-slate-300 scroll-smooth">
         <div
             class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
             <img src="/world.jpg"
@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <div class="bg-gradient-to-b from-slate-300 py-12 sm:py-32">
+    <div class="bg-gradient-to-b from-slate-300 py-12 sm:py-32 scroll-smooth">
         <div class="grid gap-x-8 gap-y-16 lg:grid-cols-3">
             <div>
                 <h2
