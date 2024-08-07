@@ -44,7 +44,7 @@
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y divide-gray-500/10">
                             <div class="space-y-2 py-6">
-                                <a v-for="item in navigation" :key="item.name" :href="item.href"
+                                <a v-for="item in navigation" :key="item.name" :href="item.href" @click="scrollTo(item.scroll),mobileMenuOpen = false"
                                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</a>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
     <div id="service" class="relative px-6 lg:px-8 scroll-smooth">
         <div class="bg-white rounded-xl py-12 sm:py-32">
             <div class="text-center mb-24">
-                <h1 class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Transforming Businesses with Technology</h1>
+                <h1 class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Transforming Businesses with Technology</h1>
             </div>
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <dl class="grid gap-x-8 gap-y-16 text-center lg:grid-cols-3">
