@@ -4,7 +4,7 @@
             <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only">{{ config.public.COMPANY_NAME }}</span>
+                        <span class="sr-only">{{ companyName }}</span>
                         <img class="h-8 w-auto" src="~/assets/logo/logo.png" alt="" />
                     </a>
                 </div>
@@ -32,7 +32,7 @@
                     class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div class="flex items-center justify-between">
                         <a href="#" class="-m-1.5 p-1.5">
-                            <span class="sr-only">{{ config.public.COMPANY_NAME }}</span>
+                            <span class="sr-only">{{ companyName }}</span>
                             <img class="h-8 w-auto" src="~/assets/logo/logo.png" alt="" />
                         </a>
                         <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -64,7 +64,7 @@
                 <div class="text-center">
                     <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Empower Your Business with
                         Innovative Solutions</h1>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">Join us at <u>{{ config.public.COMPANY_NAME }}</u>, where we
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Join us at <u>{{ companyName }}</u>, where we
                         transform your digital landscape with cutting-edge technology and innovative strategies tailored
                         for your success.</p>
                     <div class="mt-5 flex items-center justify-center gap-x-6">
@@ -75,23 +75,23 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="relative px-6 lg:px-8 scroll-smooth">
-            <div class="bg-white rounded-xl py-24 sm:py-32">
-                <div class="text-center mb-12">
-                    <h1 class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Transforming Businesses with Technology</h1>
-                </div>
-                <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                    <dl class="grid gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-                        <div v-for="stat in stats" :key="stat.id" class="mx-auto flex max-w-xs flex-col gap-y-4">
-                            <img class="rounded-lg h-full w-full object-cover object-center lg:h-full lg:w-full" :src="stat.image" />
-                            <dt class="text-base leading-7 text-gray-600">{{ stat.name }}</dt>
-                            <dd class="order-first text-xl font-semibold tracking-tight text-gray-900 sm:text-xl">
-                                {{ stat.value }}
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
+    <div class="relative px-6 lg:px-8 scroll-smooth">
+        <div class="bg-white rounded-xl py-12 sm:py-32">
+            <div class="text-center mb-12">
+                <h1 class="text-2xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Transforming Businesses with Technology</h1>
+            </div>
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <dl class="grid gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                    <div v-for="stat in stats" :key="stat.id" class="mx-auto flex max-w-xs flex-col gap-y-4">
+                        <img class="rounded-lg h-full w-full object-cover object-center lg:h-full lg:w-full" :src="stat.image" />
+                        <dt class="text-base leading-7 text-gray-600">{{ stat.name }}</dt>
+                        <dd class="order-first text-xl font-semibold tracking-tight text-gray-900 sm:text-xl">
+                            {{ stat.value }}
+                        </dd>
+                    </div>
+                </dl>
             </div>
         </div>
     </div>
@@ -111,7 +111,7 @@
                         transformation where your vision meets our expertise, elevating your narrative in the digital
                         realm.</dt>
                 </div>
-                <div class="mt-5 mx-2 sm:mx-8 flex justify-start gap-x-6">
+                <div class="mt-5 mx-2 sm:mx-8 flex sm:justify-start justify-center gap-x-6">
                     <a href="#"
                         class="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Contact
@@ -125,32 +125,32 @@
         <div class="grid gap-x-8 gap-y-16 lg:grid-cols-3">
             <div>
                 <h2
-                    class="text-xl font-semibold sm:ml-[15%] ml-[5%] text-left tracking-tight text-gray-900 sm:text-3xl">
-                    {{ config.public.COMPANY_NAME_ORG }}
+                    class="text-xl font-semibold sm:ml-[15%] mr-[5%] mx-[5%] text-left tracking-tight text-gray-900 sm:text-3xl">
+                    {{ companyNameOrg }}
                 </h2>
-                <p class="text-md font-semibold sm:ml-[15%] ml-[5%] mt-10 tracking-tight text-gray-900 sm:text-xl">
+                <p class="text-md font-semibold sm:mx-[15%] mx-[5%] mt-10 tracking-tight text-gray-900 sm:text-xl">
                     Made with love
                 </p>
             </div>
             <div>
                 <h2
-                    class="text-xl font-semibold sm:ml-[15%] ml-[5%] text-left tracking-tight text-gray-900 sm:text-3xl">
+                    class="text-xl font-semibold sm:mx-[15%] mx-[5%] text-left tracking-tight text-gray-900 sm:text-3xl">
                     Location
                 </h2>
-                <p class="text-md font-normal sm:ml-[15%] ml-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
-                    {{ config.public.FOOTER_ADDRESS }}
+                <p class="text-md font-normal sm:mx-[15%] mx-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
+                    {{ footerAddress }}
                 </p>
             </div>
             <div>
                 <h2
-                    class="text-xl font-semibold sm:ml-[15%] ml-[5%] text-left tracking-tight text-gray-900 sm:text-3xl">
+                    class="text-xl font-semibold sm:mx-[15%] mx-[5%] text-left tracking-tight text-gray-900 sm:text-3xl">
                     Contact
                 </h2>
-                <p class="text-md font-normal sm:ml-[15%] ml-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
-                    {{ config.public.FOOTER_EMAIL }}
+                <p class="text-md font-normal sm:mx-[15%] mx-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
+                    {{ footerEmail }}
                 </p>
-                <p class="text-md font-normal sm:ml-[15%] ml-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
-                    {{ config.public.FOOTER_PHONE }}
+                <p class="text-md font-normal sm:mx-[15%] mx-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
+                    {{ footerPhone }}
                 </p>
             </div>
         </div>
@@ -161,6 +161,7 @@
 import { ref } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+const { companyName, companyNameOrg, footerAddress, footerEmail, footerPhone } = useEnvVariables()
 
 const config = useRuntimeConfig()
 
