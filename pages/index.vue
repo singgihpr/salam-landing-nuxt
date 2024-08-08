@@ -68,7 +68,7 @@
                         transform your digital landscape with cutting-edge technology and innovative strategies tailored
                         for your success.</p>
                     <div class="mt-5 flex items-center justify-center gap-x-6">
-                        <a href="#"
+                        <a :href="`https://api.whatsapp.com/send/?phone=${formattedPhone}`" target="_blank"
                             class="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
                             started</a>
                     </div>
@@ -112,7 +112,7 @@
                         realm.</dt>
                 </div>
                 <div class="mt-5 mx-2 sm:mx-8 flex sm:justify-start justify-center gap-x-6">
-                    <a href="#"
+                    <a :href="`https://api.whatsapp.com/send/?phone=${formattedPhone}`" target="_blank"
                         class="rounded-md bg-gray-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         Contact
                     </a>
@@ -150,7 +150,7 @@
                     {{ footerEmail }}
                 </p>
                 <p class="text-md font-normal sm:mx-[15%] mx-[5%] mt-3 tracking-tight text-gray-900 sm:text-xl">
-                    {{ footerPhone }}
+                    <a :href="`https://api.whatsapp.com/send/?phone=${formattedPhone}`" target="_blank"><u>{{ footerPhone }}</u></a>
                 </p>
             </div>
         </div>
@@ -158,12 +158,14 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 const { companyName, companyNameOrg, footerAddress, footerEmail, footerPhone } = useEnvVariables()
 
-const config = useRuntimeConfig()
+const formattedPhone = computed(() => {
+  return footerPhone.replace(/[^\d]/g, '');
+});
 
 const navigation = [
   { name: 'Service', href: '#', scroll: 'service' },
