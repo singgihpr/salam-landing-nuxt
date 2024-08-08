@@ -12,6 +12,8 @@
   "dependencies": {
     "@headlessui/vue": "^1.7.22",
     "@heroicons/vue": "^2.1.5",
+    "@nuxtjs/seo": "^2.0.0-rc.18",
+    "@nuxtjs/sitemap": "^6.0.0-beta.1",
     "nuxt": "^3.12.4",
     "vue": "latest"
   },

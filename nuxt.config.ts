@@ -4,12 +4,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
   css: ['~/assets/css/main.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   runtimeConfig: {
     public: {
       COMPANY_NAME: '',
@@ -19,4 +21,13 @@ export default defineNuxtConfig({
       FOOTER_PHONE: ''
     }
   },
+
+  modules: ["@nuxtjs/sitemap", "@nuxtjs/seo"],
+
+  site: {
+    url: process.env.NUXT_PUBLIC_COMPANY_URL,
+    name: process.env.NUXT_PUBLIC_COMPANY_NAME,
+    description: 'Welcome to' + process.env.NUXT_PUBLIC_COMPANY_NAME,
+    defaultLocale: 'en',
+  }
 })
