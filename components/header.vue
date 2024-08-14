@@ -18,11 +18,11 @@
             <div class="hidden lg:flex lg:gap-x-12">
                 <template v-for="item in navigation" :key="item.name">
                     <NuxtLink v-if="item.href !== '#'" :to="item.href"
-                        class="text-sm font-semibold leading-6 text-gray-900">
+                        :class="['text-sm font-semibold leading-6', isActive(item.href) ? 'text-slate-600 underline underline-offset-4' : 'text-gray-900']">
                         {{ item.name }}
                     </NuxtLink>
                     <a v-else :href="item.href" @click="scrollTo(item.scroll)"
-                        class="text-sm font-semibold leading-6 text-gray-900">
+                        :class="['text-sm font-semibold leading-6', isActive(item.href) ? 'text-slate-600 underline underline-offset-4' : 'text-gray-900']">
                         {{ item.name }}
                     </a>
                 </template>
@@ -52,11 +52,11 @@
                         <div class="space-y-2 py-6">
                             <template v-for="item in navigation" :key="item.name">
                                 <NuxtLink v-if="item.href !== '#'" :to="item.href"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                    :class="['-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7', isActive(item.href) ? 'bg-gray-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50']">
                                     {{ item.name }}
                                 </NuxtLink>
                                 <a v-else :href="item.href" @click="scrollTo(item.scroll)"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                                    :class="['-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7', isActive(item.href) ? 'bg-gray-50 text-blue-600' : 'text-gray-900 hover:bg-gray-50']">
                                     {{ item.name }}
                                 </a>
                             </template>
@@ -70,6 +70,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const mobileMenuOpen = ref(false)
@@ -80,6 +81,12 @@ const scrollTo = (id) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
+
+const route = useRoute()
+const isActive = (href) => {
+  return href === route.path
+}
+
 
 const navigation = [
     { name: 'Home', href: '/', scroll: null },
