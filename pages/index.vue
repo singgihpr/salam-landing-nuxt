@@ -108,7 +108,6 @@
 
 <script setup>
 import { computed } from 'vue'
-import Header from '../components/header.vue'
 const { companyName, companyNameOrg, footerAddress, footerEmail, footerPhone } = useEnvVariables()
 
 const formattedPhone = computed(() => {

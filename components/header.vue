@@ -72,6 +72,7 @@
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+const { companyName } = useEnvVariables()
 
 const mobileMenuOpen = ref(false)
 
