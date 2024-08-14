@@ -1,57 +1,6 @@
 <template>
     <div class="bg-white scroll-smooth">
-        <header class="absolute inset-x-0 top-0 z-50">
-            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div class="flex lg:flex-1">
-                    <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only">{{ companyName }}</span>
-                        <img class="h-8 w-auto" src="~/assets/logo/logo.png" alt="" />
-                    </a>
-                </div>
-                <div class="flex lg:hidden">
-                    <button type="button"
-                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        @click="mobileMenuOpen = true">
-                        <span class="sr-only">Open main menu</span>
-                        <Bars3Icon class="h-6 w-6" aria-hidden="true" />
-                    </button>
-                </div>
-                <div class="hidden lg:flex lg:gap-x-12">
-                    <a v-for="item in navigation" :key="item.name" :href="item.href" @click="scrollTo(item.scroll)"
-                        class="text-sm font-semibold leading-6 text-gray-900">{{ item.name }}</a>
-                </div>
-                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <!-- for menu navbar in right, remove this element -->
-                    <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
-                            aria-hidden="true">&rarr;</span></a> -->
-                </div>
-            </nav>
-            <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-                <div class="fixed inset-0 z-50" />
-                <DialogPanel
-                    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                    <div class="flex items-center justify-between">
-                        <a href="#" class="-m-1.5 p-1.5">
-                            <span class="sr-only">{{ companyName }}</span>
-                            <img class="h-8 w-auto" src="~/assets/logo/logo.png" alt="" />
-                        </a>
-                        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700"
-                            @click="mobileMenuOpen = false">
-                            <span class="sr-only">Close menu</span>
-                            <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-                        </button>
-                    </div>
-                    <div class="mt-6 flow-root">
-                        <div class="-my-6 divide-y divide-gray-500/10">
-                            <div class="space-y-2 py-6">
-                                <a v-for="item in navigation" :key="item.name" :href="item.href" @click="scrollTo(item.scroll),mobileMenuOpen = false"
-                                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">{{ item.name }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </DialogPanel>
-            </Dialog>
-        </header>
+        <Header />
 
         <video
             class="w-full h-full min-h-screen object-cover leading-none p-0 absolute top-0 left-0 md:object-center object-[70%_0%] scroll-smooth"
@@ -158,42 +107,17 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
-import { Dialog, DialogPanel } from '@headlessui/vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { computed } from 'vue'
+import Header from '../components/header.vue'
 const { companyName, companyNameOrg, footerAddress, footerEmail, footerPhone } = useEnvVariables()
 
 const formattedPhone = computed(() => {
   return footerPhone.replace(/[^\d]/g, '');
 });
 
-const navigation = [
-  { name: 'Service', href: '#', scroll: 'service' },
-  { name: 'About', href: '#', scroll: 'about' },
-  { name: 'Contact', href: '#', scroll: 'contact' },
-]
-
-const scrollTo = (id) => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-};
-
 const stats = [
   { id: 1, name: 'Custom-built, responsive websites tailored to your unique needs', value: 'Custom Web Development', image: '/web-dev.jpg' },
   { id: 2, name: 'Innovative mobile applications for iOS and Android platforms', value: 'Custom Mobile Development', image: '/mobile-dev.jpg' },
   { id: 3, name: 'Smart, connected solutions to revolutionize your business operations.', value: 'Custom IoT Development', image: '/iot-dev.jpg' },
 ]
-
-const features = [
-  { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-  { name: 'Material', description: 'Solid walnut base with rare earth magnets and powder coated steel card cover' },
-  { name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
-  { name: 'Finish', description: 'Hand sanded and finished with natural oil' },
-  { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
-  { name: 'Considerations', description: 'Made from natural materials. Grain and color vary with each item.' },
-]
-
-const mobileMenuOpen = ref(false)
 </script>
