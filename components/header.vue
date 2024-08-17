@@ -90,10 +90,7 @@ const isActive = (href) => {
 
 
 const navigation = [
-    { name: 'Home', href: '/', scroll: null },
-    { name: 'Service', href: '#', scroll: 'service' },
-    { name: 'About', href: '#', scroll: 'about' },
-    { name: 'Work', href: '/works', scroll: null },
-    { name: 'Contact', href: '#', scroll: 'contact' },
+    { name: 'Homepage', href: '/', scroll: null },
+    { name: 'Our Works', href: '/works', scroll: null },
 ]
 </script>
