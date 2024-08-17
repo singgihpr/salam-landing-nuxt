@@ -29,18 +29,6 @@
                         </h3>
                         <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{ post.description }}</p>
                     </div>
-                    <div class="relative mt-8 flex items-center gap-x-4">
-                        <img :src="post.author.imageUrl" alt="" class="h-10 w-10 rounded-full bg-gray-50" />
-                        <div class="text-sm leading-6">
-                            <p class="font-semibold text-gray-900">
-                                <a :href="post.author.href">
-                                    <span class="absolute inset-0" />
-                                    {{ post.author.name }}
-                                </a>
-                            </p>
-                            <p class="text-gray-600">{{ post.author.role }}</p>
-                        </div>
-                    </div>
                 </article>
             </div>
         </div>
