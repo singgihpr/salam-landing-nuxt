@@ -14,12 +14,17 @@
     "@heroicons/vue": "^2.1.5",
     "@nuxtjs/seo": "^2.0.0-rc.18",
     "@nuxtjs/sitemap": "^6.0.0-beta.1",
+    "@pinia/nuxt": "^0.5.3",
     "nuxt": "^3.12.4",
+    "pinia": "^2.2.2",
     "vue": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.7"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ["@nuxtjs/sitemap", "@nuxtjs/seo"],
+  modules: ["@nuxtjs/sitemap", "@nuxtjs/seo", "@pinia/nuxt"],
 
   site: {
     url: process.env.NUXT_PUBLIC_COMPANY_URL,
