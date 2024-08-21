@@ -91,6 +91,7 @@ const isActive = (href) => {
 
 const navigation = [
     { name: 'Homepage', href: '/', scroll: null },
+    { name: 'About Us', href: '/about', scroll: null },
     { name: 'Our Works', href: '/works', scroll: null },
 ]
 </script>
