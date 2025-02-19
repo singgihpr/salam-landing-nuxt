@@ -1,0 +1,13 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "KWHTWME28K.com.telkom.wifiidgo",
+                "paths": [
+                    "/api/v2/payment/shopee/redirect/*"
+                ]
+            }
+        ]
+    }
+}
