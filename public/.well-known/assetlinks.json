@@ -1,11 +1,15 @@
 [
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.telkom.wifiidgo",
-      "sha256_cert_fingerprints":
-        ["69:62:8B:F3:13:2B:A2:2C:4F:DA:F7:07:77:23:F9:03:CA:68:5F:93:76:1E:6E:C4:AD:2E:F4:81:BC:6C:D9:6B"]
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.telkom.wifiidgo",
+            "sha256_cert_fingerprints": [
+                "81:CB:5C:D7:92:21:CD:07:1E:17:E0:02:AF:C0:10:32:DD:C5:1E:D1:2C:55:74:7B:89:77:69:A0:E3:65:4A:46",
+                "69:62:8B:F3:13:2B:A2:2C:4F:DA:F7:07:77:23:F9:03:CA:68:5F:93:76:1E:6E:C4:AD:2E:F4:81:BC:6C:D9:6B"
+            ]
+        }
     }
-  }
 ]

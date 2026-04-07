@@ -10,9 +10,6 @@ COPY package*.json ./
 # Instal dependensi
 RUN npm install
 
-# Salin file .env
-COPY .env ./
-
 # Salin sisa kode sumber
 COPY . .
 
