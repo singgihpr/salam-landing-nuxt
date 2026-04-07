@@ -24,6 +24,16 @@ export default defineNuxtConfig({
 
   modules: ["@nuxtjs/sitemap", "@nuxtjs/seo", "@pinia/nuxt"],
 
+  nitro: {
+    routeRules: {
+      '/.well-known/apple-app-site-association': {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    }
+  },
+
   site: {
     url: process.env.NUXT_PUBLIC_COMPANY_URL,
     name: process.env.NUXT_PUBLIC_COMPANY_NAME,
