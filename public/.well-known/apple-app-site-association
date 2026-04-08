@@ -5,7 +5,8 @@
       {
         "appID": "S39WRXUKHC.com.telkom.wifiidgo",
         "paths": [
-          "/wigo/*"
+          "/wigo/*",
+          "/force-refresh-1"
         ]
       }
     ]
